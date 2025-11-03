@@ -35,10 +35,7 @@
     }
 
     body{
-      background:
-        radial-gradient(1200px 600px at 10% -10%, var(--accent-soft), transparent 60%),
-        radial-gradient(900px 500px at 110% 10%, rgba(192,108,91,0.10), transparent 50%),
-        #ffffff;
+      background: #ffffff; /* plain white, no color wash */
       color: var(--ink);
       font-family: 'Titillium Web', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     }
@@ -51,14 +48,13 @@
     .navbar a.nav-link, .navbar .navbar-brand{ color: #444; }
     .navbar a.nav-link:hover{ color: var(--accent); }
 
-    /* Left column card */
+    /* Left column card: minimal, no shadow, no top accent bar */
     .profile-card{
       background: #fff;
-      border: 1px solid rgba(0,0,0,0.06);
-      border-top: 5px solid var(--accent);
+      border: 1px solid rgba(0,0,0,0.08); /* ultra-thin subtle outline */
       border-radius: 14px;
       padding: 1.25rem;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+      box-shadow: none;                 /* removed */
     }
 
     /* Name underline accent */
@@ -86,10 +82,10 @@
       color: #fff !important;
       text-decoration: none;
       transition: transform .08s ease, box-shadow .2s ease, opacity .2s ease;
-      box-shadow: 0 6px 18px rgba(192,108,91,.25);
+      box-shadow: 0 6px 18px rgba(192,108,91,.18);
       font-weight: 600;
     }
-    .btn-accent:hover{ transform: translateY(-1px); box-shadow: 0 8px 24px rgba(192,108,91,.35); }
+    .btn-accent:hover{ transform: translateY(-1px); box-shadow: 0 8px 24px rgba(192,108,91,.28); }
 
     .link-accent{ color: var(--accent); text-decoration: none; font-weight: 600; }
     .link-accent:hover{ text-decoration: underline; }
@@ -101,9 +97,9 @@
     /* Tidy table borders */
     .table td{ border-color: rgba(0,0,0,.06) !important; }
 
-    /* Small quality-of-life tweaks */
+    /* Small tweaks */
     .content p{ font-size: 1.02rem; }
-    img.rounded-circle{ border: 3px solid #fff; box-shadow: 0 6px 26px rgba(0,0,0,.08); }
+    img.rounded-circle{ border: 3px solid #fff; box-shadow: none; } /* no glow/shadow */
   </style>
 </head>
 
@@ -193,9 +189,9 @@
   <script src="https://unpkg.com/scrollreveal" defer></script>
   <script defer>
     document.addEventListener("DOMContentLoaded", function () {
-      ScrollReveal().reveal('.navbar', { duration: 1500, origin: 'top' });
-      ScrollReveal().reveal('.profile-card', { duration: 1200, origin: 'bottom', distance: '30px' });
-      ScrollReveal().reveal('.accent-underline', { duration: 1200, origin: 'top', distance: '20px' });
+      ScrollReveal().reveal('.navbar', { duration: 1200, origin: 'top' });
+      ScrollReveal().reveal('.profile-card', { duration: 1000, origin: 'bottom', distance: '24px' });
+      ScrollReveal().reveal('.accent-underline', { duration: 1000, origin: 'top', distance: '18px' });
     });
   </script>
 </body>
