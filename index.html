@@ -25,17 +25,15 @@
   <!-- Academicons for Google Scholar -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css">
 
-  <!-- Inline accent styling -->
+  <!-- Minimal inline styles -->
   <style>
     :root{
-      /* Accent tuned to your photo (warm terracotta) */
-      --accent: #C06C5B;
-      --accent-soft: #F7EDE9;
+      --accent: #C06C5B;    /* warm terracotta */
       --ink: #1C2733;
     }
 
     body{
-      background: #ffffff; /* plain white, no color wash */
+      background: #ffffff; /* plain white */
       color: var(--ink);
       font-family: 'Titillium Web', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     }
@@ -48,56 +46,23 @@
     .navbar a.nav-link, .navbar .navbar-brand{ color: #444; }
     .navbar a.nav-link:hover{ color: var(--accent); }
 
-    /* Left column card: minimal, no shadow, no top accent bar */
+    /* Remove any card chrome entirely */
     .profile-card{
-      background: #fff;
-      border: 1px solid rgba(0,0,0,0.08); /* ultra-thin subtle outline */
-      border-radius: 14px;
-      padding: 1.25rem;
-      box-shadow: none;                 /* removed */
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      box-shadow: none;
     }
 
-    /* Name underline accent */
-    .accent-underline{
-      position: relative;
-      display: inline-block;
-      line-height: 1.2;
-    }
-    .accent-underline::after{
-      content: "";
-      position: absolute;
-      left: 0; bottom: -6px;
-      width: 100%; height: 10px;
-      background: linear-gradient(90deg, var(--accent), rgba(192,108,91,0.25));
-      border-radius: 6px;
-      opacity: 0.3;
-    }
-
-    /* Accent buttons/links */
-    .btn-accent{
-      display: inline-block;
-      padding: .48rem .95rem;
-      border-radius: 999px;
-      background: var(--accent);
-      color: #fff !important;
-      text-decoration: none;
-      transition: transform .08s ease, box-shadow .2s ease, opacity .2s ease;
-      box-shadow: 0 6px 18px rgba(192,108,91,.18);
-      font-weight: 600;
-    }
-    .btn-accent:hover{ transform: translateY(-1px); box-shadow: 0 8px 24px rgba(192,108,91,.28); }
-
-    .link-accent{ color: var(--accent); text-decoration: none; font-weight: 600; }
-    .link-accent:hover{ text-decoration: underline; }
-
-    /* Social icons hover tint */
+    /* Social icons hover tint (kept subtle) */
     .social a{ color: #6b7280; }
     .social a:hover{ color: var(--accent); }
 
     /* Tidy table borders */
     .table td{ border-color: rgba(0,0,0,.06) !important; }
 
-    /* Small tweaks */
+    /* Small text polish */
     .content p{ font-size: 1.02rem; }
     img.rounded-circle{ border: 3px solid #fff; box-shadow: none; } /* no glow/shadow */
   </style>
@@ -156,7 +121,7 @@
 
         <!-- Right column -->
         <div class="col-lg-9">
-          <h2 class="fw-bold mb-4 accent-underline">Oleksandra 'Sasha' Cheipesh</h2>
+          <h2 class="fw-bold mb-4">Oleksandra 'Sasha' Cheipesh</h2>
 
           <p style="text-align: justify; text-justify: inter-word; hyphens: auto;">
             I am a PhD candidate in Economics at <strong>Universidad Carlos III de Madrid</strong> – specialising in applied economics.
@@ -169,14 +134,9 @@
 
           <p class="fs-6">I visited Yale University during Fall 2024.</p>
 
-          <p class="fs-6"><strong>I am on the 2025/26 Job Market</strong> and you can read my
-            <a class="link-accent" href="JMP_new_version.pdf"><strong>Job Market Paper</strong></a>.
-          </p>
-
-          <p class="fs-6">
-            <a class="btn-accent me-2" href="CV_OC.pdf">Download CV</a>
-            <a class="btn-accent" href="mailto:ocheipes@eco.uc3m.es">Email me</a>
-          </p>
+          <p class="fs-6"><strong>I am on the 2025/26 Job Market</strong> and you can read my <strong>Job Market Paper</strong> <a href="JMP_new_version.pdf">here</a>.</p>
+          <p class="fs-6">Please reach me at <ins>ocheipes@eco.uc3m.es</ins>.</p>
+          <p class="fs-6"><a href="CV_OC.pdf">Here</a> is my <strong>CV</strong>.</p>
         </div>
       </div>
     </div>
@@ -190,8 +150,8 @@
   <script defer>
     document.addEventListener("DOMContentLoaded", function () {
       ScrollReveal().reveal('.navbar', { duration: 1200, origin: 'top' });
-      ScrollReveal().reveal('.profile-card', { duration: 1000, origin: 'bottom', distance: '24px' });
-      ScrollReveal().reveal('.accent-underline', { duration: 1000, origin: 'top', distance: '18px' });
+      ScrollReveal().reveal('.profile-card', { duration: 900, origin: 'bottom', distance: '22px' });
+      ScrollReveal().reveal('h2.fw-bold', { duration: 900, origin: 'top', distance: '16px' });
     });
   </script>
 </body>
